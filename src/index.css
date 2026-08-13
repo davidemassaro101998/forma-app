@@ -7,31 +7,30 @@
     --bg-main: #F2F2F7;
     --bg-header: rgba(255, 255, 255, 0.85);
     --bg-card: #FFFFFF;
-    --bg-card-selected: #007AFF;
+    --bg-card-selected: #0EA968;
     --text-main: #000000;
     --text-sub: #8E8E93;
     --text-selected: #FFFFFF;
     --border-card: rgba(0, 0, 0, 0.05);
-    --accent-blue: #007AFF;
+    --accent-primary: #0EA968;
 
-    /* Identita di marchio: il blu resta il colore funzionale di sistema
-       (bottoni secondari, chrome della UI) — il verde smeraldo-teal e
-       l'oro sono gli UNICI due punti dove il marchio si fa notare: la
-       scelta migliore e la card raccomandata, non ovunque. Verde scelto
-       perche ha un'attivazione fisiologica (arousal) piu bassa di
-       rosso/arancio — adatto a un'app pensata per uso ripetuto senza
-       affaticare, e sfrutta il bias del "via libera" del semaforo
-       (verde = salute/procedi). Bilancia sia il lato performance che
-       quello recovery/yoga, a differenza di un rosso da palestra
-       aggressivo. Oro tenue solo per il badge "Top Qualita", mai come
-       colore dominante. */
+    /* Identita di marchio: verde smeraldo-teal ovunque nella UI (bottoni,
+       icone, bordi selezionati, focus) al posto dell'azzurro di sistema
+       ereditato da Kado AI — differenziazione visiva netta tra le tre
+       app. Verde scelto perche ha un'attivazione fisiologica (arousal)
+       piu bassa di rosso/arancio — adatto a un'app pensata per uso
+       ripetuto senza affaticare, e sfrutta il bias del "via libera" del
+       semaforo (verde = salute/procedi). Bilancia sia il lato
+       performance che quello recovery/yoga, a differenza di un rosso da
+       palestra aggressivo. Oro tenue riservato al solo badge "Top
+       Qualita". */
     --brand-coral: #0EA968;
     --brand-coral-dark: #0B8452;
     --brand-gold: #C9A15C;
 
     --text-primary: var(--text-main);
     --text-secondary: var(--text-sub);
-    --accent: var(--accent-blue);
+    --accent: var(--accent-primary);
 
     /* Font display: solo per i momenti di marchio (splash, titolo del
        risultato) — tutta la UI funzionale resta sul font di sistema,
