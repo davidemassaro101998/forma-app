@@ -103,13 +103,14 @@ export default function App() {
     }
   }, []);
 
-  // Language State
+  // Language State — detect from browser locale among the supported
+  // languages, defaulting to Italian (this app's primary market).
   const [language, setLanguage] = useState<Language>(() => {
     try {
-      const userLang = navigator.language || "";
-      if (userLang.toLowerCase().includes("it")) {
-        return "it";
-      }
+      const userLang = (navigator.language || "").toLowerCase();
+      const supported: Language[] = ["it", "en", "es", "fr", "de"];
+      const match = supported.find((l) => userLang.startsWith(l));
+      if (match) return match;
     } catch (e) {
       // fallback
     }

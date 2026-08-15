@@ -8,10 +8,15 @@ import { createServer } from "http";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const httpServer = createServer(app);
 
 app.use(express.json());
+
+// Health check endpoint for Railway (and any other host) deployment probes.
+app.get("/api/health", (_req, res) => {
+  res.json({ status: "ok" });
+});
 
 // Security & Performance Headers
 app.use((req, res, next) => {
