@@ -30,6 +30,7 @@ export interface GiftItem {
   reviewsCount?: number; // e.g. 1480
   isPrime?: boolean;
   asin?: string;
+  dataSource?: "amazon" | "ai-estimate";
 }
 
 export interface SavedReminder {
