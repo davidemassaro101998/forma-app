@@ -36,6 +36,7 @@ export interface Translations {
 
   // Home Screen Wizard
   fastTrackPlaceholder: string;
+  heroMicLabel: string;
   wizardBack: string;
   step1Title: string;
   step1Subtitle: string;
@@ -171,6 +172,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     loadingStep3: "Preparazione link store e dettagli",
 
     fastTrackPlaceholder: "Hai un'idea o SOS? Parla o scrivi...",
+    heroMicLabel: "Tocca e parla",
     wizardBack: "Indietro",
     step1Title: "Per cosa ti serve?",
     step1Subtitle: "Seleziona il contesto per personalizzare",
@@ -193,7 +195,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exactAmountPlaceholder: "Cifra esatta (es. 18)",
     extraOptionsLabel: "OPZIONI EXTRA",
     alreadyExperiencedLabel: "Sono già esperto (voglio prodotti più avanzati)",
-    extraDetailsPlaceholder: "Dettaglio extra (opzionale)",
+    extraDetailsPlaceholder: "Aggiungi un dettaglio (es. durata, livello)",
     ctaShowProducts: "MOSTRA I PRODOTTI GIUSTI",
 
     voiceAssistantTitle: "Assistente Vocale AI",
@@ -307,6 +309,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     loadingStep3: "Preparing store links & details",
 
     fastTrackPlaceholder: "Have an idea or SOS? Speak or type...",
+    heroMicLabel: "Tap to speak",
     wizardBack: "Back",
     step1Title: "What do you need it for?",
     step1Subtitle: "Select the context to customize",
@@ -329,7 +332,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exactAmountPlaceholder: "Exact amount (e.g. 18)",
     extraOptionsLabel: "EXTRA OPTIONS",
     alreadyExperiencedLabel: "I'm already experienced (I want more advanced products)",
-    extraDetailsPlaceholder: "Extra details (optional)",
+    extraDetailsPlaceholder: "Add a detail (e.g. duration, level)",
     ctaShowProducts: "SHOW THE RIGHT PRODUCTS",
 
     voiceAssistantTitle: "AI Voice Assistant",
@@ -443,6 +446,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     loadingStep3: "Preparando enlaces y detalles de la tienda",
 
     fastTrackPlaceholder: "¿Tienes una idea o un SOS? Habla o escribe...",
+    heroMicLabel: "Toca y habla",
     wizardBack: "Atrás",
     step1Title: "¿Para qué lo necesitas?",
     step1Subtitle: "Selecciona el contexto para personalizar",
@@ -465,7 +469,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exactAmountPlaceholder: "Cifra exacta (ej. 18)",
     extraOptionsLabel: "OPCIONES EXTRA",
     alreadyExperiencedLabel: "Ya tengo experiencia (quiero productos más avanzados)",
-    extraDetailsPlaceholder: "Detalles adicionales (opcional)",
+    extraDetailsPlaceholder: "Añade un detalle (ej. duración, nivel)",
     ctaShowProducts: "MOSTRAR LOS PRODUCTOS IDEALES",
 
     voiceAssistantTitle: "Asistente de Voz AI",
@@ -579,6 +583,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     loadingStep3: "Préparation des liens et détails de la boutique",
 
     fastTrackPlaceholder: "Une idée ou un SOS ? Parlez ou écrivez...",
+    heroMicLabel: "Touchez et parlez",
     wizardBack: "Retour",
     step1Title: "Pour quel usage ?",
     step1Subtitle: "Sélectionnez le contexte pour personnaliser",
@@ -601,7 +606,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exactAmountPlaceholder: "Montant précis (ex. 18)",
     extraOptionsLabel: "OPTIONS SUPPLÉMENTAIRES",
     alreadyExperiencedLabel: "J'ai déjà de l'expérience (je veux des produits plus avancés)",
-    extraDetailsPlaceholder: "Détails supplémentaires (facultatif)",
+    extraDetailsPlaceholder: "Ajoutez un détail (ex. durée, niveau)",
     ctaShowProducts: "AFFICHER LES BONS PRODUITS",
 
     voiceAssistantTitle: "Assistant Vocal IA",
@@ -715,6 +720,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     loadingStep3: "Vorbereitung von Store-Links & Details",
 
     fastTrackPlaceholder: "Hast du eine Idee oder einen SOS? Sprich oder tippe...",
+    heroMicLabel: "Tippen und sprechen",
     wizardBack: "Zurück",
     step1Title: "Wofür brauchst du es?",
     step1Subtitle: "Wähle den Kontext zur Personalisierung",
@@ -737,7 +743,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     exactAmountPlaceholder: "Genauer Betrag (z. B. 18)",
     extraOptionsLabel: "ZUSATZOPTIONEN",
     alreadyExperiencedLabel: "Ich bin bereits erfahren (ich möchte fortgeschrittenere Produkte)",
-    extraDetailsPlaceholder: "Zusätzliche Details (optional)",
+    extraDetailsPlaceholder: "Füge ein Detail hinzu (z. B. Dauer, Level)",
     ctaShowProducts: "DIE PASSENDEN PRODUKTE ANZEIGEN",
 
     voiceAssistantTitle: "KI-Sprachassistent",
