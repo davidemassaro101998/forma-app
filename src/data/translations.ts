@@ -76,7 +76,6 @@ export interface Translations {
   backAria: string;
   optionLabel: string;
   searchOnAmazon: string;
-  reminderIosStorageHint: string;
   newSearch: string;
   previous: string;
   next: string;
@@ -88,11 +87,6 @@ export interface Translations {
   copiedAndOpened: string;
   copyLink: string;
   moreProducts: string;
-  saveForLater: string;
-  goalNamePlaceholder: string;
-  cancel: string;
-  save: string;
-  reminderSaved: string;
   amazonDisclaimer: string;
   shareMessagePrefix: string;
   shareMessageMiddle: string;
@@ -111,11 +105,6 @@ export interface Translations {
   micBlocked: string;
   micEnableBtn: string;
   micDeniedHint: string;
-  notificationsLabel: string;
-  testNotificationBtn: string;
-  sectionGoals: string;
-  noGoals: string;
-  deleteAria: string;
   sectionLegal: string;
   privacyPolicyLabel: string;
   termsLabel: string;
@@ -220,7 +209,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     backAria: "Indietro",
     optionLabel: "Opzione",
     searchOnAmazon: "CERCA SU AMAZON",
-    reminderIosStorageHint: "Su iPhone, Safari può cancellare i dati salvati dopo una settimana senza aprire il sito. Aggiungi Forma AI alla Home per essere sicuro che questo promemoria arrivi davvero il giorno giusto.",
     newSearch: "Nuova Ricerca",
     previous: "Precedente",
     next: "Successivo",
@@ -232,11 +220,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     copiedAndOpened: "Copiato & Aperto!",
     copyLink: "Copia Link",
     moreProducts: "Altri 3 Prodotti",
-    saveForLater: "Salva per dopo",
-    goalNamePlaceholder: "Nome obiettivo (facoltativo)",
-    cancel: "Annulla",
-    save: "Salva",
-    reminderSaved: "Promemoria salvato — te lo ricorderemo noi.",
     amazonDisclaimer: "In qualità di Affiliato Amazon, Forma AI riceve un guadagno dagli acquisti idonei.",
     shareMessagePrefix: "Ho trovato il prodotto giusto per il mio obiettivo fitness:",
     shareMessageMiddle: "Guarda qui su Amazon:",
@@ -254,11 +237,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     micBlocked: "Bloccato",
     micEnableBtn: "Attiva Permesso Microfono",
     micDeniedHint: "Hai bloccato il microfono per questo sito. Riattivalo dalle impostazioni del browser (icona lucchetto nella barra indirizzo).",
-    notificationsLabel: "Notifiche PWA Promemoria",
-    testNotificationBtn: "⚡ Invia Notifica di Prova PWA",
-    sectionGoals: "I MIEI OBIETTIVI",
-    noGoals: "Nessun obiettivo salvato. Dopo aver trovato un prodotto, potrai salvarlo per ricevere un promemoria.",
-    deleteAria: "Elimina",
     sectionLegal: "LEGALE & COMPLIANCE",
     privacyPolicyLabel: "Privacy Policy (GDPR EU)",
     termsLabel: "Termini e Condizioni",
@@ -367,7 +345,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     backAria: "Back",
     optionLabel: "Option",
     searchOnAmazon: "SEARCH ON AMAZON",
-    reminderIosStorageHint: "On iPhone, Safari can clear saved data after a week of not opening the site. Add Forma AI to your Home Screen so this reminder is safe until the day it matters.",
     newSearch: "New Search",
     previous: "Previous",
     next: "Next",
@@ -379,11 +356,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     copiedAndOpened: "Copied & Opened!",
     copyLink: "Copy Link",
     moreProducts: "3 More Products",
-    saveForLater: "Save for later",
-    goalNamePlaceholder: "Goal name (optional)",
-    cancel: "Cancel",
-    save: "Save",
-    reminderSaved: "Reminder saved — we'll remind you.",
     amazonDisclaimer: "As an Amazon Associate, Forma AI earns from qualifying purchases.",
     shareMessagePrefix: "I found the right product for my fitness goal:",
     shareMessageMiddle: "Check it out on Amazon:",
@@ -401,11 +373,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     micBlocked: "Blocked",
     micEnableBtn: "Enable Microphone Permission",
     micDeniedHint: "You've blocked the microphone for this site. Re-enable it from your browser's site settings (padlock icon in the address bar).",
-    notificationsLabel: "PWA Reminder Notifications",
-    testNotificationBtn: "⚡ Send Test PWA Notification",
-    sectionGoals: "MY GOALS",
-    noGoals: "No saved goals yet. After finding a product, you can save it to get a reminder.",
-    deleteAria: "Delete",
     sectionLegal: "LEGAL & COMPLIANCE",
     privacyPolicyLabel: "Privacy Policy (GDPR EU)",
     termsLabel: "Terms & Conditions",
@@ -514,7 +481,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     backAria: "Atrás",
     optionLabel: "Opción",
     searchOnAmazon: "BUSCAR EN AMAZON",
-    reminderIosStorageHint: "En iPhone, Safari puede borrar los datos guardados tras una semana sin abrir el sitio. Añade Forma AI a tu pantalla de inicio para asegurarte de que este recordatorio llegue el día que importa.",
     newSearch: "Nueva Búsqueda",
     previous: "Anterior",
     next: "Siguiente",
@@ -526,11 +492,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     copiedAndOpened: "¡Copiado y Abierto!",
     copyLink: "Copiar Enlace",
     moreProducts: "3 Productos Más",
-    saveForLater: "Guardar para después",
-    goalNamePlaceholder: "Nombre del objetivo (opcional)",
-    cancel: "Cancelar",
-    save: "Guardar",
-    reminderSaved: "Recordatorio guardado — te avisaremos.",
     amazonDisclaimer: "Como Afiliado de Amazon, Forma AI obtiene ingresos por las compras que cumplen los requisitos.",
     shareMessagePrefix: "Encontré el producto ideal para mi objetivo fitness:",
     shareMessageMiddle: "Míralo aquí en Amazon:",
@@ -548,11 +509,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     micBlocked: "Bloqueado",
     micEnableBtn: "Activar Permiso de Micrófono",
     micDeniedHint: "Has bloqueado el micrófono para este sitio. Reactívalo desde la configuración del sitio en tu navegador (icono de candado en la barra de direcciones).",
-    notificationsLabel: "Notificaciones PWA de Recordatorio",
-    testNotificationBtn: "⚡ Enviar Notificación de Prueba PWA",
-    sectionGoals: "MIS OBJETIVOS",
-    noGoals: "Aún no hay objetivos guardados. Después de encontrar un producto, podrás guardarlo para recibir un recordatorio.",
-    deleteAria: "Eliminar",
     sectionLegal: "LEGAL Y CUMPLIMIENTO",
     privacyPolicyLabel: "Política de Privacidad (RGPD UE)",
     termsLabel: "Términos y Condiciones",
@@ -661,7 +617,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     backAria: "Retour",
     optionLabel: "Option",
     searchOnAmazon: "RECHERCHER SUR AMAZON",
-    reminderIosStorageHint: "Sur iPhone, Safari peut effacer les données enregistrées après une semaine sans ouvrir le site. Ajoutez Forma AI à votre écran d'accueil pour que ce rappel arrive bien le jour J.",
     newSearch: "Nouvelle Recherche",
     previous: "Précédent",
     next: "Suivant",
@@ -673,11 +628,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     copiedAndOpened: "Copié & Ouvert !",
     copyLink: "Copier le Lien",
     moreProducts: "3 Autres Produits",
-    saveForLater: "Enregistrer pour plus tard",
-    goalNamePlaceholder: "Nom de l'objectif (facultatif)",
-    cancel: "Annuler",
-    save: "Enregistrer",
-    reminderSaved: "Rappel enregistré — nous vous le rappellerons.",
     amazonDisclaimer: "En tant que Partenaire Amazon, Forma AI perçoit une rémunération sur les achats éligibles.",
     shareMessagePrefix: "J'ai trouvé le bon produit pour mon objectif fitness :",
     shareMessageMiddle: "Regardez ici sur Amazon :",
@@ -695,11 +645,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     micBlocked: "Bloqué",
     micEnableBtn: "Activer l'Autorisation du Microphone",
     micDeniedHint: "Vous avez bloqué le microphone pour ce site. Réactivez-le depuis les réglages du site dans votre navigateur (icône cadenas dans la barre d'adresse).",
-    notificationsLabel: "Notifications PWA de Rappel",
-    testNotificationBtn: "⚡ Envoyer une Notification PWA de Test",
-    sectionGoals: "MES OBJECTIFS",
-    noGoals: "Aucun objectif enregistré pour le moment. Après avoir trouvé un produit, vous pourrez l'enregistrer pour recevoir un rappel.",
-    deleteAria: "Supprimer",
     sectionLegal: "LÉGAL & CONFORMITÉ",
     privacyPolicyLabel: "Politique de Confidentialité (RGPD UE)",
     termsLabel: "Conditions Générales",
@@ -808,7 +753,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     backAria: "Zurück",
     optionLabel: "Option",
     searchOnAmazon: "AUF AMAZON SUCHEN",
-    reminderIosStorageHint: "Auf dem iPhone kann Safari gespeicherte Daten nach einer Woche ohne Öffnen der Seite löschen. Füge Forma AI zum Home-Bildschirm hinzu, damit diese Erinnerung sicher am richtigen Tag ankommt.",
     newSearch: "Neue Suche",
     previous: "Zurück",
     next: "Weiter",
@@ -820,11 +764,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     copiedAndOpened: "Kopiert & Geöffnet!",
     copyLink: "Link Kopieren",
     moreProducts: "3 Weitere Produkte",
-    saveForLater: "Für später speichern",
-    goalNamePlaceholder: "Zielname (optional)",
-    cancel: "Abbrechen",
-    save: "Speichern",
-    reminderSaved: "Erinnerung gespeichert — wir erinnern dich rechtzeitig.",
     amazonDisclaimer: "Als Amazon-Partner verdient Forma AI an qualifizierten Käufen.",
     shareMessagePrefix: "Ich habe das richtige Produkt für mein Fitnessziel gefunden:",
     shareMessageMiddle: "Schau es dir auf Amazon an:",
@@ -842,11 +781,6 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     micBlocked: "Blockiert",
     micEnableBtn: "Mikrofonberechtigung Aktivieren",
     micDeniedHint: "Du hast das Mikrofon für diese Website blockiert. Aktiviere es erneut in den Website-Einstellungen deines Browsers (Schloss-Symbol in der Adressleiste).",
-    notificationsLabel: "PWA-Erinnerungsbenachrichtigungen",
-    testNotificationBtn: "⚡ Test-PWA-Benachrichtigung Senden",
-    sectionGoals: "MEINE ZIELE",
-    noGoals: "Noch keine Ziele gespeichert. Nachdem du ein Produkt gefunden hast, kannst du es speichern, um eine Erinnerung zu erhalten.",
-    deleteAria: "Löschen",
     sectionLegal: "RECHTLICHES & COMPLIANCE",
     privacyPolicyLabel: "Datenschutzerklärung (DSGVO EU)",
     termsLabel: "Allgemeine Geschäftsbedingungen",

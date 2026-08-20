@@ -4,29 +4,15 @@ import {
   X,
   Vibrate,
   Mic,
-  Bell,
   ShieldCheck,
   FileText,
   ShoppingBag,
   ExternalLink,
   Mail,
   Settings,
-  Target,
-  Trash2,
 } from "lucide-react";
 import { LegalDocType } from "./LegalModal";
-import { triggerTestNotification } from "../lib/pwaNotifications";
-import { getReminders, deleteReminder } from "../lib/reminders";
-import { SavedReminder } from "../types";
 import { Language, TRANSLATIONS } from "../data/translations";
-
-const DATE_LOCALES: Record<Language, string> = {
-  en: "en-US",
-  it: "it-IT",
-  es: "es-ES",
-  fr: "fr-FR",
-  de: "de-DE",
-};
 
 interface SettingsDrawerProps {
   isOpen: boolean;
@@ -34,8 +20,6 @@ interface SettingsDrawerProps {
   language?: Language;
   hapticEnabled: boolean;
   onToggleHaptic: (enabled: boolean) => void;
-  notificationsEnabled: boolean;
-  onToggleNotifications: (enabled: boolean) => void;
   onOpenLegalModal: (docType: LegalDocType) => void;
   onSendFeedback: () => void;
 }
@@ -46,25 +30,11 @@ export const SettingsDrawer: React.FC<SettingsDrawerProps> = React.memo(({
   language = "it",
   hapticEnabled,
   onToggleHaptic,
-  notificationsEnabled,
-  onToggleNotifications,
   onOpenLegalModal,
   onSendFeedback,
 }) => {
   const t = TRANSLATIONS[language] || TRANSLATIONS.it;
   const [micPermission, setMicPermission] = useState<"unknown" | "granted" | "denied" | "prompt">("unknown");
-  const [reminders, setReminders] = useState<SavedReminder[]>([]);
-
-  // Ricarica la lista ogni volta che il pannello si apre (potrebbe
-  // essere stata appena aggiunta un'occasione dalla schermata risultati)
-  useEffect(() => {
-    if (isOpen) setReminders(getReminders());
-  }, [isOpen]);
-
-  const handleDeleteReminder = (id: string) => {
-    deleteReminder(id);
-    setReminders(getReminders());
-  };
 
   // Legge lo stato REALE del permesso (non solo se esiste hardware audio).
   // Supportato su Chrome/Edge; su Safari resta "unknown" finche l'utente
@@ -247,99 +217,6 @@ export const SettingsDrawer: React.FC<SettingsDrawerProps> = React.memo(({
                     <p className="text-[10px] text-[#68686D] text-center px-1 leading-relaxed">
                       {t.micDeniedHint}
                     </p>
-                  )}
-                </div>
-
-                {/* Notifiche */}
-                <div className="p-3.5 rounded-[22px] bg-[#F2F2F7] border border-[#E5E5EA] space-y-2.5">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <Bell className="w-4 h-4 text-[#0EA968]" />
-                      <span className="text-xs font-semibold">
-                        {t.notificationsLabel}
-                      </span>
-                    </div>
-                    <button
-                      onClick={() => {
-                        triggerHaptic();
-                        onToggleNotifications(!notificationsEnabled);
-                      }}
-                      className={`w-11 h-6 rounded-full transition-colors relative cursor-pointer p-0.5 ${
-                        notificationsEnabled ? "bg-[#0EA968]" : "bg-[#E5E5EA]"
-                      }`}
-                    >
-                      <div
-                        className={`w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${
-                          notificationsEnabled ? "translate-x-5" : "translate-x-0"
-                        }`}
-                      />
-                    </button>
-                  </div>
-
-                  <button
-                    onClick={() => {
-                      triggerHaptic();
-                      triggerTestNotification("Preparazione estate");
-                    }}
-                    className="w-full py-2 px-3 rounded-xl bg-white border border-[#E5E5EA] hover:border-[#0EA968] text-xs font-bold text-[#0EA968] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
-                  >
-                    <Bell className="w-3.5 h-3.5 text-[#0EA968]" />
-                    <span>{t.testNotificationBtn}</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Le mie occasioni — la lista delle date salvate (dal
-                  bottone "Ricordamelo anche l'anno prossimo" nella
-                  schermata risultati). Il motore che manda le notifiche
-                  14/7/3 giorni prima esisteva gia, qui c'e finalmente
-                  un posto per vedere/gestire cosa hai salvato. */}
-              <div className="space-y-2">
-                <span className="text-[11px] font-bold text-[#68686D] uppercase tracking-wider block px-1">
-                  {t.sectionGoals}
-                </span>
-                <div className="p-3.5 rounded-[22px] bg-[#F2F2F7] border border-[#E5E5EA] space-y-2">
-                  {reminders.length === 0 ? (
-                    <p className="text-[11px] text-[#68686D] text-center py-2">
-                      {t.noGoals}
-                    </p>
-                  ) : (
-                    reminders
-                      .slice()
-                      .sort((a, b) => a.date.localeCompare(b.date))
-                      .map((rem) => (
-                        <div
-                          key={rem.id}
-                          className="flex items-center justify-between gap-2 p-2.5 rounded-2xl bg-white border border-[#E5E5EA]"
-                        >
-                          <div className="flex items-center gap-2.5 min-w-0">
-                            <div className="w-8 h-8 rounded-xl bg-[#0EA968]/10 flex items-center justify-center shrink-0">
-                              <Target className="w-4 h-4 text-[#0EA968]" />
-                            </div>
-                            <div className="min-w-0">
-                              <p className="text-xs font-bold text-[#000000] truncate">
-                                {rem.name || rem.relation}
-                              </p>
-                              <p className="text-[10px] text-[#68686D]">
-                                {new Date(rem.date + "T00:00:00").toLocaleDateString(
-                                  DATE_LOCALES[language] || "en-US",
-                                  { day: "numeric", month: "long" }
-                                )}
-                              </p>
-                            </div>
-                          </div>
-                          <button
-                            onClick={() => {
-                              triggerHaptic();
-                              handleDeleteReminder(rem.id);
-                            }}
-                            className="p-1.5 rounded-full hover:bg-[#F2F2F7] text-[#68686D] hover:text-[#FF4D6D] transition-colors cursor-pointer shrink-0"
-                            aria-label={t.deleteAria}
-                          >
-                            <Trash2 className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      ))
                   )}
                 </div>
               </div>

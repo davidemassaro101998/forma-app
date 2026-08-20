@@ -19,11 +19,7 @@ import {
 import { detectUserCountry } from "./data/countries";
 import { generateSmartFallbackGifts } from "./data/mockGifts";
 import { Language } from "./data/translations";
-import {
-  registerServiceWorker,
-  checkSavedEventNotifications,
-} from "./lib/pwaNotifications";
-import { getReminders } from "./lib/reminders";
+import { registerServiceWorker } from "./lib/serviceWorker";
 
 export default function App() {
   // Restore saved app session for background/app switch persistence
@@ -83,17 +79,6 @@ export default function App() {
     }
   });
 
-  const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(() => {
-    try {
-      if (typeof window !== "undefined" && "Notification" in window) {
-        return Notification.permission === "granted";
-      }
-      return localStorage.getItem("forma_notifications_enabled") !== "false";
-    } catch (e) {
-      return true;
-    }
-  });
-
   const [showSettingsDrawer, setShowSettingsDrawer] = useState(false);
   const [legalModalType, setLegalModalType] = useState<LegalDocType | null>(null);
 
@@ -104,23 +89,6 @@ export default function App() {
       localStorage.setItem("forma_haptic_enabled", enabled ? "true" : "false");
     } catch (e) {
       // ignore
-    }
-  }, []);
-
-  // Handle Notifications Toggle
-  const handleToggleNotifications = useCallback((enabled: boolean) => {
-    setNotificationsEnabled(enabled);
-    try {
-      localStorage.setItem("forma_notifications_enabled", enabled ? "true" : "false");
-    } catch (e) {
-      // ignore
-    }
-    if (enabled && typeof window !== "undefined" && "Notification" in window && Notification.permission !== "granted") {
-      try {
-        Notification.requestPermission();
-      } catch (e) {
-        // ignore
-      }
     }
   }, []);
 
@@ -179,15 +147,7 @@ export default function App() {
   useEffect(() => {
     registerServiceWorker();
 
-    if (notificationsEnabled) {
-      // Le notifiche di festivita (San Valentino, Natale, ecc.) non si
-      // applicano a un'app fitness/wellness — rimosse. Resta solo il
-      // motore di promemoria obiettivi salvati (14/7/3 giorni prima
-      // della data indicata dall'utente).
-      checkSavedEventNotifications(getReminders());
-    }
-
-    // Parse URL Action parameters from Notification click
+    // Parse URL Action parameters (kept for old shared/bookmarked links)
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const action = params.get("action");
@@ -204,7 +164,7 @@ export default function App() {
         setShowSplash(false);
       }
     }
-  }, [notificationsEnabled]);
+  }, []);
 
   // Main Gift Generator Handler (Optimistic Instant 0ms Transition)
   const handleGenerateGifts = useCallback(async (quizData: QuizState, forceRegenerate = false) => {
@@ -403,8 +363,6 @@ export default function App() {
         language={language}
         hapticEnabled={hapticEnabled}
         onToggleHaptic={handleToggleHaptic}
-        notificationsEnabled={notificationsEnabled}
-        onToggleNotifications={handleToggleNotifications}
         onOpenLegalModal={handleOpenLegalModal}
         onSendFeedback={handleSendFeedback}
       />
