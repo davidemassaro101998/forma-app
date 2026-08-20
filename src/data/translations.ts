@@ -194,7 +194,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     customBudgetLabel: "Personalizzato",
     exactAmountPlaceholder: "Cifra esatta (es. 18)",
     extraOptionsLabel: "OPZIONI EXTRA",
-    alreadyExperiencedLabel: "Sono già esperto (voglio prodotti più avanzati)",
+    alreadyExperiencedLabel: "Sono già esperto (prodotti avanzati)",
     extraDetailsPlaceholder: "Aggiungi un dettaglio (es. durata, livello)",
     ctaShowProducts: "MOSTRA I PRODOTTI GIUSTI",
 
@@ -331,7 +331,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     customBudgetLabel: "Custom",
     exactAmountPlaceholder: "Exact amount (e.g. 18)",
     extraOptionsLabel: "EXTRA OPTIONS",
-    alreadyExperiencedLabel: "I'm already experienced (I want more advanced products)",
+    alreadyExperiencedLabel: "Already experienced (advanced picks)",
     extraDetailsPlaceholder: "Add a detail (e.g. duration, level)",
     ctaShowProducts: "SHOW THE RIGHT PRODUCTS",
 
@@ -468,7 +468,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     customBudgetLabel: "Personalizado",
     exactAmountPlaceholder: "Cifra exacta (ej. 18)",
     extraOptionsLabel: "OPCIONES EXTRA",
-    alreadyExperiencedLabel: "Ya tengo experiencia (quiero productos más avanzados)",
+    alreadyExperiencedLabel: "Ya tengo experiencia (productos avanzados)",
     extraDetailsPlaceholder: "Añade un detalle (ej. duración, nivel)",
     ctaShowProducts: "MOSTRAR LOS PRODUCTOS IDEALES",
 
@@ -605,7 +605,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     customBudgetLabel: "Personnalisé",
     exactAmountPlaceholder: "Montant précis (ex. 18)",
     extraOptionsLabel: "OPTIONS SUPPLÉMENTAIRES",
-    alreadyExperiencedLabel: "J'ai déjà de l'expérience (je veux des produits plus avancés)",
+    alreadyExperiencedLabel: "Déjà expérimenté (produits avancés)",
     extraDetailsPlaceholder: "Ajoutez un détail (ex. durée, niveau)",
     ctaShowProducts: "AFFICHER LES BONS PRODUITS",
 
@@ -742,7 +742,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     customBudgetLabel: "Individuell",
     exactAmountPlaceholder: "Genauer Betrag (z. B. 18)",
     extraOptionsLabel: "ZUSATZOPTIONEN",
-    alreadyExperiencedLabel: "Ich bin bereits erfahren (ich möchte fortgeschrittenere Produkte)",
+    alreadyExperiencedLabel: "Bereits erfahren (fortgeschrittene Produkte)",
     extraDetailsPlaceholder: "Füge ein Detail hinzu (z. B. Dauer, Level)",
     ctaShowProducts: "DIE PASSENDEN PRODUKTE ANZEIGEN",
 
