@@ -72,7 +72,7 @@ export default function App() {
   // Theme is strictly light mode
   useEffect(() => {
     try {
-      localStorage.setItem("kado_theme", "light");
+      localStorage.setItem("forma_theme", "light");
     } catch (e) {}
   }, []);
 
