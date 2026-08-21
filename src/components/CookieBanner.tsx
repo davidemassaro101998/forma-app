@@ -15,7 +15,7 @@ export const CookieBanner: React.FC<CookieBannerProps> = React.memo(({
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem("kado_cookie_accepted");
+      const stored = localStorage.getItem("forma_cookie_accepted");
       if (stored !== "true") {
         setAccepted(false);
       }
@@ -26,7 +26,7 @@ export const CookieBanner: React.FC<CookieBannerProps> = React.memo(({
 
   const handleAccept = () => {
     try {
-      localStorage.setItem("kado_cookie_accepted", "true");
+      localStorage.setItem("forma_cookie_accepted", "true");
     } catch (e) {
       // ignore
     }

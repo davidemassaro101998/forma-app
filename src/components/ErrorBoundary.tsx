@@ -38,8 +38,8 @@ export class ErrorBoundary extends React.Component<
     // causa (dato corrotto salvato in precedenza) — non tocca le
     // occasioni salvate ne le preferenze dell'utente.
     try {
-      localStorage.removeItem("kado_saved_session");
-      localStorage.removeItem("kado_home_form_state");
+      localStorage.removeItem("forma_saved_session");
+      localStorage.removeItem("forma_home_form_state");
     } catch (e) {
       // ignore
     }

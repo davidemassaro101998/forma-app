@@ -44,7 +44,7 @@ export const HomeScreenApple: React.FC<HomeScreenAppleProps> = React.memo(({
   // Wizard Step State (1, 2, or 3) & Form State Restoration
   const savedHomeForm = React.useMemo(() => {
     try {
-      const stored = localStorage.getItem("kado_home_form_state");
+      const stored = localStorage.getItem("forma_home_form_state");
       if (stored) return JSON.parse(stored);
     } catch (e) {}
     return null;
@@ -69,7 +69,7 @@ export const HomeScreenApple: React.FC<HomeScreenAppleProps> = React.memo(({
   // Save form choices to localStorage (step is intentionally not persisted — see wizardStep above)
   useEffect(() => {
     try {
-      localStorage.setItem("kado_home_form_state", JSON.stringify({
+      localStorage.setItem("forma_home_form_state", JSON.stringify({
         recipient,
         vibe,
         budget,
