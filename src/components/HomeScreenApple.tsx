@@ -141,21 +141,37 @@ export const HomeScreenApple: React.FC<HomeScreenAppleProps> = React.memo(({
     });
   }, [triggerHaptic, recipient, vibe, budget, extraDetails, formatPill, hasAlreadyEverything, fastTrackIdea, onGenerateGifts]);
 
-  const recipientOptions = [
-    { label: "A casa", icon: HomeIcon },
-    { label: "Palestra", icon: Dumbbell },
-    { label: "Outdoor", icon: Footprints },
-    { label: "Recupero", icon: Leaf },
-  ];
+  const recipientOptions = language === "it"
+    ? [
+        { label: "A casa", icon: HomeIcon },
+        { label: "Palestra", icon: Dumbbell },
+        { label: "Outdoor", icon: Footprints },
+        { label: "Recupero", icon: Leaf },
+      ]
+    : [
+        { label: "At Home", icon: HomeIcon },
+        { label: "Gym", icon: Dumbbell },
+        { label: "Outdoor", icon: Footprints },
+        { label: "Recovery", icon: Leaf },
+      ];
 
-  const vibeOptions = [
-    { label: "Cardio", icon: HeartPulse },
-    { label: "Forza", icon: Dumbbell },
-    { label: "Yoga & Mobilità", icon: Flower2 },
-    { label: "Nutrizione", icon: AppleIcon },
-    { label: "Recupero", icon: RotateCcw },
-    { label: "Tech", icon: Watch },
-  ];
+  const vibeOptions = language === "it"
+    ? [
+        { label: "Cardio", icon: HeartPulse },
+        { label: "Forza", icon: Dumbbell },
+        { label: "Yoga & Mobilità", icon: Flower2 },
+        { label: "Nutrizione", icon: AppleIcon },
+        { label: "Recupero", icon: RotateCcw },
+        { label: "Tech", icon: Watch },
+      ]
+    : [
+        { label: "Cardio", icon: HeartPulse },
+        { label: "Strength", icon: Dumbbell },
+        { label: "Yoga & Mobility", icon: Flower2 },
+        { label: "Nutrition", icon: AppleIcon },
+        { label: "Recovery", icon: RotateCcw },
+        { label: "Tech", icon: Watch },
+      ];
 
   const budgetOptions = ["< 25€", "25 - 50€", "50 - 100€", "100€+"];
 
